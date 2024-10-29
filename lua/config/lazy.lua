@@ -15,11 +15,24 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup lazy.nvim
+
+-- setting up plugins
+-- defines what plugins to load, and what not based on where the nvim is attached to
+local is_vscode = vim.g.vscode ~= nil
+local plugins
+
+if is_vscode then
+  plugins = "vscplugins"  
+else
+  plugins = "plugins"
+end
+print(plugins)
+
+-- Setup lazy.nvim plugins
 require("lazy").setup({
   spec = {
     -- import your plugins
-    { import = "plugins" },
+    { import = plugins },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -29,5 +42,8 @@ require("lazy").setup({
 })
 
 -- actually activating the plugins
-vim.cmd.colorscheme "catppuccin"
-
+-- depends on the situation where nvim is started
+if is_vscode then
+else
+  vim.cmd.colorscheme "catppuccin"
+end

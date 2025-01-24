@@ -1,8 +1,12 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
-*.log
-data
+# Settings
+#
+# Ignore the files backup and temp
+
+*.swp
+*.swo
+*.bak
+*.tmp
+
+.local/
+
+lazy-lock.json

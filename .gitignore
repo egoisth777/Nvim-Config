@@ -9,4 +9,7 @@
 
 .local/
 
+# Ignore everything configured by vscode
+
+.vscode
 lazy-lock.json

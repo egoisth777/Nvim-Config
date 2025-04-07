@@ -36,6 +36,7 @@ vim.opt.autoread = true
 --]]
 --Set the default shell program
 vim.opt.shell = "pwsh.exe"
+
 -- Adjust quoting
 vim.opt.shellxquote = ""
 vim.opt.shellquote = ""

@@ -2,7 +2,8 @@
 This File keeps all the settings of Core Components of LazyVim
 --]]
 
--- Boostrap Code of Lazy.nvim
+-- Boostrap Code of Lazy.nvim Package Manager
+-- This Code is for Lazy.nvim Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- This line checks the lazy.nvim plugin installation,
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -18,6 +19,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     end
 end
 vim.opt.rtp:prepend(lazypath)
+
 
 -- setting up plugins
 -- defines what plugins to load, and what not based on where the nvim is attached to

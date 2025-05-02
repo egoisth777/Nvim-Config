@@ -5,17 +5,13 @@
 -- [[
 -- Setting Line numebrs relatedd staff.
 -- ]]
-vim.opt.number = true
+vim.opt.number = true -- enable line number options
 vim.opt.relativenumber = true --enable absolute line numbers
-vim.opt.statuscolumn = "%s %4l|%3r  " -- set with absolute and relative number at the same time
+-- Set the colors for the line numbers in statuscolumn
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#66ccff" }) -- For relative numbers
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#66ccff", bold = true }) -- For absolute numbers-------------
 
--- Set the absolute and relative number colors
-vim.api.nvim_set_hl(0, "StatusColumnAbsolute", { fg = "#ffcc66", bold = true }) -- Yellow absolute numbers
-vim.api.nvim_set_hl(0, "StatusColumnRelative", { fg = "#99cc99" }) -- Green relative numbers
-vim.api.nvim_set_hl(0, "StatusColumnSeparator", { fg = "#666666" }) -- Gray separator
-vim.o.statuscolumn = "%#StatusColumnAbsolute# %4l%#StatusColumnSeparator#│%#StatusColumnRelative#%3r  "
-
---------------------------------------------------------------------------------------------------------
+vim.opt.statuscolumn = "%=%#LineNr#%{v:lnum} | %=%#CursorLineNr#%{v:relnum?v:relnum:v:lnum} "
 
 
 

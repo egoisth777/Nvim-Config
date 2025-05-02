@@ -2,27 +2,16 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- [[
--- Setting Line numebrs relatedd staff.
--- ]]
-vim.opt.number = true -- enable line number options
-vim.opt.relativenumber = true --enable absolute line numbers
--- Set the colors for the line numbers in statuscolumn
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#66ccff" }) -- For relative numbers
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#66ccff", bold = true }) -- For absolute numbers-------------
+-- set up the status column related
+require("config.statuscolumn") -- Updated require path to properly load the statuscolumn module
 
-vim.opt.statuscolumn = "%=%#LineNr#%{v:lnum} | %=%#CursorLineNr#%{v:relnum?v:relnum:v:lnum} "
-
-
-
--- use spaces for tabs and whatnot
+-- use spaces for tab
 vim.opt.tabstop = 4 -- Set the display of Tab-Size to be 4 ('/t' Character will be displayed as 4 spaces)
 vim.opt.shiftwidth = 4 -- Indent with 4 spaces
 vim.opt.shiftround = true -- This will round the indentation to the nearest "Multiples" of "Shiftwidth" 7 -> 8 if pressing "Tab"
 vim.opt.expandtab = true -- uses spaces instaed of tabs (Will be replacing the '\t' character with " " characters)
 vim.opt.backspace = "2"
 vim.opt.showcmd = true
-vim.opt.laststatus = 4
 vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true

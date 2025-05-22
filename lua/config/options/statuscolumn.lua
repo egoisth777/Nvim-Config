@@ -77,7 +77,7 @@ local function custom_statuscolumn()
 end
 
 -- Set the statuscolumn to use our custom function
-vim.opt.statuscolumn = "%{%v:lua.require'config.statuscolumn'.get_statuscolumn()%}"
+vim.opt.statuscolumn = "%{%v:lua.require'config.options.statuscolumn'.get_statuscolumn()%}"
 
 -- Export the function for the statuscolumn to use
 return {

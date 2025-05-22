@@ -2,8 +2,15 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- set up the status column related
-require("config.statuscolumn") -- Updated require path to properly load the statuscolumn module
+-- Set up the file detection
+require("config.options.ftdetect")
+
+-- Set up the status column related
+require("config.options.statuscolumn") -- Updated require path to properly load the statuscolumn module
+
+-- Set up Advanced folding
+require("config.options.folding") -- Adjust scale based folding provided by @ufo and @tree-sitter 
+
 
 -- use spaces for tab
 vim.opt.tabstop = 4 -- Set the display of Tab-Size to be 4 ('/t' Character will be displayed as 4 spaces)

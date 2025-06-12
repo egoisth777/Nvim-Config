@@ -1,5 +1,5 @@
 -- setting up some trouble notifications
-
+-- All Troubles will be displayed at the bottom of the screen
 return
 {
     "folke/trouble.nvim",

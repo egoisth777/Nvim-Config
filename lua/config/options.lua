@@ -9,8 +9,7 @@ require("config.options.ftdetect")
 require("config.options.statuscolumn") -- Updated require path to properly load the statuscolumn module
 
 -- Set up Advanced folding
-require("config.options.folding") -- Adjust scale based folding provided by @ufo and @tree-sitter 
-
+require("config.options.folding") -- Adjust scale based folding provided by @ufo and @tree-sitter
 
 -- use spaces for tab
 vim.opt.tabstop = 4 -- Set the display of Tab-Size to be 4 ('/t' Character will be displayed as 4 spaces)
@@ -36,3 +35,8 @@ vim.opt.shellquote = ""
 --  Set the redirection scheme and encoding
 vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8"
 vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8"
+vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+

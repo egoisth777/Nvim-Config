@@ -20,7 +20,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- setting up plugins
 -- defines what plugins to load, and what not based on where the nvim is attached to
 local is_vscode = vim.g.vscode ~= nil
@@ -50,7 +49,7 @@ require("lazy").setup({
         version = false, -- always use the latest git commit
         -- version = "*", -- try installing the latest stable version for plugins that support semver
     },
-    install = { colorscheme = { "catppuccin", "habamax" } },
+    install = { colorscheme = { "catppuccin", "abyss" } },
     checker = {
         enabled = true, -- check for plugin updates periodically
         notify = false, -- notify on update

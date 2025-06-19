@@ -7,6 +7,8 @@ return {
             "clangd", -- lsp server, if not installed
             "clang-format", -- standalone formatter binary in llvm project
             "codelldb", -- lldb for debugger setup
+            "markdownlint-cli2",
+            "markdown-toc",
         },
     },
 }

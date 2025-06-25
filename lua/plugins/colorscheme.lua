@@ -1,4 +1,5 @@
-return {
+return 
+{
     -- Catppuccin configuration
     {
         "catppuccin/nvim",
@@ -6,7 +7,8 @@ return {
         opts = {
             flavour = "mocha",
             transparent_background = true, -- Enables full transparency for backgrounds
-            background = {
+            background = 
+            {
                 light = "latte",
                 dark = "mocha",
             },

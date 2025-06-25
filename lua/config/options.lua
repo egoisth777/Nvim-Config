@@ -40,3 +40,13 @@ vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Comman
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
+-- Python LSP Configuration
+-- Set to "pyrefly" to use pyrefly (default)
+-- Set to "pyright" to use pyright
+-- Set to "basedpyright" to use basedpyright
+vim.g.lazyvim_python_lsp = "pyrefly"
+
+-- Set to "ruff" to use ruff (default)
+-- Set to "ruff_lsp" to use the old LSP implementation
+vim.g.lazyvim_python_ruff = "ruff"
+

@@ -9,7 +9,6 @@ return {
     },
     ft = 
     { "markdown", "norg", "rmd", "org", "codecompanion" },
-
     latex = {
       enabled = true,
       converter = "latex2text",

@@ -10,4 +10,4 @@ return {
   { import = "plugins.lang_python.nvim_dap" },
   { import = "plugins.lang_python.nvim_lspconfig" },
   { import = "plugins.lang_python.nvim_treesitter" },
-} 
+}

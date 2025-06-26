@@ -3,8 +3,9 @@ This File keeps all the settings of Core Components of LazyVim
 --]]
 
 -- Boostrap Code of Lazy.nvim Package Manager
--- This Code is for Lazy.nvim Package Manager
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- This line checks the lazy.nvim plugin installation,
+
+-- Check LazyVim Installation
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
     local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })

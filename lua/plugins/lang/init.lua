@@ -1,0 +1,6 @@
+return {
+    -- Import all Python-specific plugin configurations
+    { import = "plugins.lang.lang_python" },
+    { import = "plugins.lang.lang_cpp" },
+    { import = "plugins.lang.lang_asm" },
+}

@@ -1,5 +1,4 @@
 -- Set up nvim-cmp to have clangd extension to provide complete sources
-
 return
 {
   "hrsh7th/nvim-cmp",

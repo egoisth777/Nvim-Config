@@ -62,6 +62,9 @@ return
         -- Install Kanagawa.nvim
         "rebelot/kanagawa.nvim"
     },
+    {
+        "EdenEast/nightfox.nvim"
+    },
     -- LazyVim core configuration
     {
         "LazyVim/LazyVim",

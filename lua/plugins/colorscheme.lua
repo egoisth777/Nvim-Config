@@ -34,7 +34,7 @@ return
                 italic_comments = true,
                 italic = false,
                 bold = true,
-                transparent_background = false,
+                transparent_background = true,
                 treesitter = true,
                 overrides = {},
             })
@@ -60,16 +60,29 @@ return
     },
     {
         -- Install Kanagawa.nvim
-        "rebelot/kanagawa.nvim"
+        "rebelot/kanagawa.nvim",
+        name = "kanagawa",
+        opts = {
+                transparent_background = true,
+        }, 
+        
     },
     {
-        "EdenEast/nightfox.nvim"
+        "EdenEast/nightfox.nvim", 
+    },
+    {
+        "sainnhe/everforest", 
+        name = "everforest", 
+        opts = 
+        {
+            transparent_background = true, 
+        }
     },
     -- LazyVim core configuration
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "kanagawa",
+            colorscheme = "catppuccin",
         },
     },
 }

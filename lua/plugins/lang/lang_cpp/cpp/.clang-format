@@ -1,0 +1,7 @@
+# We'll use defaults from the LLVM style, but with 4 columns indentation.
+BasedOnStyle: GNU
+IndentWidth: 4
+PointerAlignment: Left
+BreakConstructorInitializers: BeforeColon
+AllowShortFunctionsOnASingleLine: None
+ColumnLimit: 0

@@ -2,7 +2,7 @@
 -- Setting Line numbers related staff.
 -- ]]
 
-vim.opt.number = true -- enable line number options
+vim.opt.number = true -- enable line numwber options
 vim.opt.relativenumber = true --enable absolute line numbers
 
 -- Create custom highlight groups that are more specific to override any theme settings

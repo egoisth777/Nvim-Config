@@ -1,5 +1,9 @@
 -- C++ Language Configuration
--- This file automatically loads all C++-related plugins
+-- This file loads all C++-related plugins from subdirectories
 
-local auto_import = require("utility.auto_import")
-return auto_import.auto_import_modules("plugins.lang.lang_cpp") 
+return {
+    -- Import CMake-specific configurations
+    { import = "plugins.lang.lang_cpp.cmake" },
+    -- Import C++-specific configurations  
+    { import = "plugins.lang.lang_cpp.cpp" },
+}

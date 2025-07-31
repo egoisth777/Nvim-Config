@@ -58,11 +58,15 @@ return
             })
         end,
     },
+    {
+        -- Install Kanagawa.nvim
+        "rebelot/kanagawa.nvim"
+    },
     -- LazyVim core configuration
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "cyberdream",
+            colorscheme = "kanagawa",
         },
     },
 }

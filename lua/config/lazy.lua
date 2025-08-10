@@ -21,16 +21,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- setting up plugins
--- defines what plugins to load, and what not based on where the nvim is attached to
-local is_vscode = vim.g.vscode ~= nil
-local plugins
-
-if is_vscode then
-    plugins = "vscplugins"
-else
-    plugins = "plugins"
-end
 
 -- Setting up Lazy and its plugins
 require("lazy").setup({
@@ -39,7 +29,7 @@ require("lazy").setup({
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
         { import = "lazyvim.plugins.extras.vscode" },
         -- import/override with your plugins
-        { import = plugins },
+        { import = "plugins" },
     },
     defaults = {
         -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

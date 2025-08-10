@@ -2,7 +2,10 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- Automacially saving
+-- Load cursor autocmds
+require("config.autocmds.cursor")
+
+-- Automatically saving
 
 -- Auto-save every 30 seconds for modified buffers
 vim.api.nvim_create_autocmd(

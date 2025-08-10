@@ -7,18 +7,6 @@ return
         opts = {
             flavour = "mocha",
             transparent_background = true, -- Enables full transparency for backgrounds
-            background = 
-            {
-                light = "latte",
-                dark = "mocha",
-            },
-            integrations = {
-                cmp = true,
-                nvimtree = true,
-                telescope = true,
-                treesitter = true,
-                -- Add other integrations you use
-            },
         },
     },
     -- abyss colorscheme
@@ -54,7 +42,27 @@ return
                 italic_comments = true,
                 borderless_pickers = true,
                 terminal_colors = true,
-                cache = true,
+                cache = false,
+                
+                
+                -- Add theme customizations for specific syntax elements
+                highlights = {
+                    -- Languages with Constructors and Destructors specific settings
+                    ["@constructor"] = {link = "Function"},
+                    
+                    -- Override LSP semantic tokens for constructors
+                    ["@lsp.mod.constructorOrDestructor.cpp"] = {link = "Function"},
+                    ["@lsp.typemod.class.constructorOrDestructor.cpp"] = {link = "Function"},
+                    
+                    -- Globally applied Highlightings
+                    Operator = { fg = "#ffffff", bold = true}, -- Your current white operators
+                    Comment = {fg = "#77aa77", bold = false, italic = true},  -- Your current subtle green
+                    
+                    -- -- Settings for Variable
+                    Identifier = { fg = "#5ef1ff", bold = true },
+                    ["@variable"] = { fg = "#5ef1ff", bold = true },
+                    ["@variable.builtin"] = {fg = "#ff5ea0", bold = true, italic = true},
+                }
             })
         end,
     },
@@ -63,26 +71,23 @@ return
         "rebelot/kanagawa.nvim",
         name = "kanagawa",
         opts = {
-                transparent_background = true,
+                transparent = true,
         }, 
         
-    },
+    }, 
     {
         "EdenEast/nightfox.nvim", 
-    },
-    {
-        "sainnhe/everforest", 
-        name = "everforest", 
-        opts = 
-        {
-            transparent_background = true, 
+        opts = {
+            transparent = true,
         }
+        
     },
     -- LazyVim core configuration
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "catppuccin",
+            colorscheme = "cyberdream",
         },
     },
 }
+

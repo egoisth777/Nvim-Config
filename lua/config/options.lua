@@ -11,8 +11,6 @@ require("config.options.editorsettings")
 -- filetype detection
 require("config.options.ftdetect")
 
-
-
 -- Python LSP Configuration
 -- Set to "pyrefly" to use pyrefly (default)
 -- Set to "pyright" to use pyright

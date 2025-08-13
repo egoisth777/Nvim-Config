@@ -20,13 +20,13 @@ return {
         workspaces = {
             {
                 -- Settings for Knowledge-Base
-                name = "Knowledge-Base",
-                path = "E:/repos/KnowledgeBase/",
+                name = "Obsidian Knowledge-Base",
+                path = vim.fn.expand("$OBS_KNOWLEDGE_BASE"),
             },
             {
                 -- Settings for Meta-Base
-                name = "Meta-Base",
-                path = "E:/repos/MetaBase/",
+                name = "Obsidian Meta-Base",
+                path = vim.fn.expand("$OBS_META_BASE"),
             },
         },
         ui = {

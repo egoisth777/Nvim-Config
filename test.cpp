@@ -3,6 +3,7 @@
 
 int main(){
     std::cout << "Hello World" << std::endl;
+    
     return 10;
 }
 class Element {
@@ -12,6 +13,7 @@ class Element {
     public:
         Element();
         ~Element();
+    
         Element(const Element& other);
         Element(const Element&& other);
     public:

@@ -1,20 +1,32 @@
 local M = {}
 
-function M.auto_import_modules(base_dir)
-  local imports = {} -- Table that holds all imports
-  -- 
-  local glob_path = "lua/" .. base_dir:gsub("%.", "/") .. "/*.lua"
+function M.auto_import_modules(base_module)
+  local imports = {}
+  -- Test Relative Path to be correct or not
+ 
+  local config_path = vim.fn.stdpath("config")
+  config_path = config_path:gsub("\\", "/") -- Might be MS-DOS Style Path
+
+  local glob_path = config_path .. "/lua/" .. base_module:gsub("%.", "/") .. "/*.lua"
+  print("DEBUG - Glob path:", glob_path)
+  
+  -- GLOB all files under the glob_path
   local files = vim.fn.glob(glob_path, true, true)
   
-  -- Find files
   for _, file in ipairs(files) do 
-    local normalized_file = file:gsub("\\", "/") -- Path might be in the Windows Format
-    local module_path = normalized_file:gsub("^lua/", ""):gsub("%.lua$", ""):gsub("/", ".")
+    local normalized_file = file:gsub("\\", "/")
     
-    if not module_path:match("%.init$") then
-      -- Add each import spec to the end of the import array
+    -- bc| need file name to combine withExtract 
+    -- do| get fileName part
+    local fileName = normalized_file:match("([^/]+)%.lua$")
+    
+    -- bc| need sth {import "<rel_path to outmost init.lua>"}
+    -- do| combine base_module + fileName to get current module    
+    if fileName and fileName ~= "init" then
+      local module_path = base_module .. "." .. fileName
       table.insert(imports, {import = module_path})
     end
+    
   end
   
   return imports

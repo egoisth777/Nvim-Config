@@ -1,2 +1,2 @@
-local autoImport = require("utility.autoImport")
-return autoImport.auto_import_modules("plugins.snippets")
+local autoImport = require("utility.auto_import")
+return autoImport.auto_import_modules("plugins.snippets"  )

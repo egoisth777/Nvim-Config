@@ -4,16 +4,16 @@ return
   {
     "nvim-treesitter/nvim-treesitter", 
     opts = {
-      ensured_installed = {"cmake"}
+      ensure_installed = {"cmake"}
     }
   },
-  -- Setting up for mason to ensured installing
+  -- Setting up for mason to ensure installing
   -- 1. cmakelang
   -- 2. cmakelint
   {
     "mason.nvim", 
     opts = {
-      ensured_installed = {"cmakelang", "cmakelint"}
+      ensure_installed = {"cmakelang", "cmakelint"}
     },
   }
 }

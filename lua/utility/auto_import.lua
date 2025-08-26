@@ -8,7 +8,6 @@ function M.auto_import_modules(base_module)
   config_path = config_path:gsub("\\", "/") -- Might be MS-DOS Style Path
 
   local glob_path = config_path .. "/lua/" .. base_module:gsub("%.", "/") .. "/*.lua"
-  print("DEBUG - Glob path:", glob_path)
   
   -- GLOB all files under the glob_path
   local files = vim.fn.glob(glob_path, true, true)

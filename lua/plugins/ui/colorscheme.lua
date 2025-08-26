@@ -1,14 +1,27 @@
-return 
+-- Currently Contains All Colorscheme set up for nvim
+--[[
+    1. catppuccin
+    2. abyss
+    3. cyberdream
+    4. kanagawa
+    5. nightfox
+--]]
+
+-- END- - - - - - - - - - - - - - - - - - - - - -  
+
+return
 {
     -- Catppuccin configuration
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        opts = {
+        opts =
+        {
             flavour = "mocha",
             transparent_background = true, -- Enables full transparency for backgrounds
         },
     },
+    
     -- abyss colorscheme
     {
         "barrientosvctor/abyss.nvim",

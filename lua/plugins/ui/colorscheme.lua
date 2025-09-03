@@ -56,29 +56,66 @@ return
                 borderless_pickers = true,
                 terminal_colors = true,
                 cache = false,
-                
-                
+
                 -- Add theme customizations for specific syntax elements
                 highlights = {
-                    -- Languages with Constructors and Destructors specific settings
-                    ["@constructor"] = {link = "Function"},
                     
-                    -- Override LSP semantic tokens for constructors
+                    -- Global Settings---------------------------------------------------------- 
+                        -- White 
+                        Identifier = { fg = "#ffffff", bold = true}, 
+                        
+                        -- Yellow (Face Value)
+
+                        Number = {fg = "#f1ff5e" , italic = true},
+                        String = {fg = "#f1ff5e" , italic = true},
+                        
+                        -- Your current subtle green
+                        Comment = {fg = "#77aa77", bold = false, italic = true},  
+                    
+                        -- Orange
+                        Keyword = {fg = "#ffbd5e", bold = false}, 
+                        
+                        -- Magenta
+                        Type = {fg = "#ff5ef1", bold = false},
+                        
+                        -- Neon Green
+                        Function = {fg = "#5eff6c", bold = true, italic = true},  
+                        Operator = { fg = "#5eff6c"},
+                       
+                        -- Neon Pink
+                        Special = {fg = "#ff5ea0", italic = true},
+
+                    -- END OF GLOBAL SETTINGS ---------------------------------------------------
+
+                    CursorLine = {bg = "#354456", bold = true},
+                    Visual = {bg = "#507789", italic = true, bold = true, undercurl = true},
+
+                    -- Word under cursor (via LSP/illuminate)
+                    LspReferenceText  = { bg = "#507789" },
+                    LspReferenceRead  = { bg = "#507789" },
+                    LspReferenceWrite = { bg = "#507789" },
+                    
+                    IlluminatedWordText  = { bg = "#507789" },
+                    IlluminatedWordRead  = { bg = "#507789" },
+                    IlluminatedWordWrite = { bg = "#507789" },
+
+                    -- LSP and Language Settings
+
+                    -- Language Settings
+                    ["@variable"] = { fg = "#ffffff", bold = true },
+                    ["@keyword.type"] = {link = "Keyword"},
+                    ["@constructor"] = {link = "Function"},
+                    ["@type.builtin"] = {link = "Type"},
+                    ["@module"] = {fg = "#5ef1ff"},
+                    
+                    -- LSP Settings
                     ["@lsp.mod.constructorOrDestructor.cpp"] = {link = "Function"},
                     ["@lsp.typemod.class.constructorOrDestructor.cpp"] = {link = "Function"},
-                    
-                    -- Globally applied Highlightings
-                    Operator = { fg = "#ffffff", bold = true}, -- Your current white operators
-                    Comment = {fg = "#77aa77", bold = false, italic = true},  -- Your current subtle green
-                    
-                    -- -- Settings for Variable
-                    Identifier = { fg = "#5ef1ff", bold = true },
-                    ["@variable"] = { fg = "#5ef1ff", bold = true },
-                    ["@variable.builtin"] = {fg = "#ff5ea0", bold = true, italic = true},
                 }
             })
         end,
     },
+    
     {
         -- Install Kanagawa.nvim
         "rebelot/kanagawa.nvim",

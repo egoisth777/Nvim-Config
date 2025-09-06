@@ -80,13 +80,36 @@ return
                         
                         -- Neon Green
                         Function = {fg = "#5eff6c", bold = true, italic = true},  
+                        PreProc = {fg = "#5eff6c", bold = true, italic = true},
                         Operator = { fg = "#5eff6c"},
-                       
+                         
                         -- Neon Pink
                         Special = {fg = "#ff5ea0", italic = true},
+                        
+                        -- Blue
+                        Delimiter = {fg = "#5ea1ff", bold = true},
+                        
 
                     -- END OF GLOBAL SETTINGS ---------------------------------------------------
 
+                    -- LSP and Language Settings
+
+                    -- General Language Settings
+                    ["@variable"] = { fg = "#ffffff", bold = true },
+                    ["@keyword.type"] = {link = "Keyword"},
+                    ["@constructor"] = {link = "Function"},
+                    ["@type.builtin"] = {link = "Type"},
+                    ["@module"] = {fg = "#5ef1ff"},
+
+                    -- cpp settings
+                    ["@keyword.conditional.ternary.cpp"] ={link = "Operator"},
+                    ["@lsp.mod.constructorOrDestructor.cpp"] = {link = "Function"},
+                    ["@lsp.typemod.class.constructorOrDestructor.cpp"] = {link = "Function"},
+                    
+
+                    -- Cursor related ---------------------------------------------------------- 
+
+                    
                     CursorLine = {bg = "#354456", bold = true},
                     Visual = {bg = "#507789", italic = true, bold = true, undercurl = true},
 
@@ -99,18 +122,6 @@ return
                     IlluminatedWordRead  = { bg = "#507789" },
                     IlluminatedWordWrite = { bg = "#507789" },
 
-                    -- LSP and Language Settings
-
-                    -- Language Settings
-                    ["@variable"] = { fg = "#ffffff", bold = true },
-                    ["@keyword.type"] = {link = "Keyword"},
-                    ["@constructor"] = {link = "Function"},
-                    ["@type.builtin"] = {link = "Type"},
-                    ["@module"] = {fg = "#5ef1ff"},
-                    
-                    -- LSP Settings
-                    ["@lsp.mod.constructorOrDestructor.cpp"] = {link = "Function"},
-                    ["@lsp.typemod.class.constructorOrDestructor.cpp"] = {link = "Function"},
                 }
             })
         end,

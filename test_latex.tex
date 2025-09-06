@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{LaTeX Setup Test Document}
+\author{Neovim User}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This is a test document to verify that your LaTeX setup is working correctly in Neovim.
+
+\section{Mathematical Expressions}
+Here are some mathematical expressions to test:
+
+\subsection{Basic Math}
+Inline math: $E = mc^2$
+
+\subsection{Equations}
+\begin{equation}
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+\label{eq:gaussian}
+\end{equation}
+
+\subsection{Greek Letters}
+Here are some Greek letters: $\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$, $\theta$, $\lambda$, $\mu$, $\pi$, $\sigma$, $\omega$.
+
+\subsection{More Complex Math}
+\begin{align}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}
+
+\section{Lists}
+\subsection{Itemized List}
+\begin{itemize}
+\item First item
+\item Second item with math: $\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$
+\item Third item
+\end{itemize}
+
+\subsection{Enumerated List}
+\begin{enumerate}
+\item First numbered item
+\item Second numbered item
+\item Third numbered item
+\end{enumerate}
+
+\section{Testing Instructions}
+To test this setup:
+\begin{enumerate}
+\item Open this file in Neovim
+\item Press \texttt{<leader>lc} to compile
+\item Press \texttt{<leader>lv} to view the PDF
+\item Try using snippets like typing \texttt{alpha} and pressing Tab
+\item Test live preview with \texttt{<F5>}
+\end{enumerate}
+
+If everything works, you should see this document compiled as a PDF!
+
+\section{References}
+You can reference equations like Equation \ref{eq:gaussian}.
+
+\end{document}

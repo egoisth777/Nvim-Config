@@ -11,8 +11,6 @@ require("config.options.editorsettings")
 -- filetype detection
 require("config.options.ftdetect")
 
--- LaTeX Performance Debug Tools
-require("config.latex_debug")
 
 -- Python LSP Configuration
 -- Set to "pyrefly" to use pyrefly (default)

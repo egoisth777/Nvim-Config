@@ -1,4 +1,6 @@
 return {
+
+  -- ensure install the asm-lsp language server
   {
     "mason-org/mason.nvim",
     opts = {
@@ -6,13 +8,14 @@ return {
         "asm-lsp",
       },
     },
-  },
+    },
+  -- mason-lsp-config
   {
     "mason-org/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "asm_lsp" },
-    },
+    opts = {},
   },
+
+  -- Configure asm-lsp server
   {
     "neovim/nvim-lspconfig",
     opts = {

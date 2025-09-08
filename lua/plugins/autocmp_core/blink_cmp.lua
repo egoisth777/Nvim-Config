@@ -8,11 +8,21 @@ return {
     sources = {
       default = { 'lsp', 'snippets', 'buffer', 'path' },
       per_filetype = {
-        plaintex = { 'lsp', 'snippets', 'path'},
+        plaintex = { 'lsp', 'snippets', 'path' },
       },
     },
     snippets = {
       preset = 'luasnip'
-    }
+    },
+
+    keymap = {
+      -- The 'default' preset provides many sane keybindings.
+      -- We will build upon it.
+      preset = 'default',
+
+      -- The recommended mapping for Tab and Shift-Tab.
+      ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+    },
   }
 }

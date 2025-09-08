@@ -3,31 +3,15 @@ return {
   {
     "lervag/vimtex",
     ft = { "tex", "plaintex", "bib" },
-    init = function()
+    lazy = false, -- Load immediately to ensure commands are available
+    config = function()
       -- VimTeX configuration
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
-      
+
       -- Configure callback for inverse search
       vim.g.vimtex_view_enabled = 1
       vim.g.vimtex_view_automatic = 0
-      
-      vim.g.vimtex_compiler_method = "latexmk"
-      vim.g.vimtex_compiler_latexmk = {
-        aux_dir = "",
-        out_dir = "",
-        callback = 1,
-        continuous = 1,
-        executable = "latexmk",
-        options = {
-          "-pdf",
-          "-shell-escape",
-          "-verbose",
-          "-file-line-error",
-          "-synctex=1",
-          "-interaction=nonstopmode",
-        },
-      }
 
       -- Disable some default mappings
       vim.g.vimtex_mappings_enabled = 0
@@ -45,6 +29,8 @@ return {
         envs = { whitelist = { "figure", "table", "tikzpicture" } },
       }
     end,
+
+    -- Keybindings for VimTeX commands
     keys = {
       { "<leader>lc", "<cmd>VimtexCompile<cr>",   desc = "Compile LaTeX (continuous)" },
       { "<leader>lC", "<cmd>VimtexCompileSS<cr>", desc = "Compile LaTeX (single shot)" },
@@ -64,18 +50,8 @@ return {
       vim.list_extend(opts.ensure_installed, { "latex", "bibtex" })
 
       opts.highlight = opts.highlight or {}
-      -- Setting for Highlighting
+      -- Disable treesitter highlighting for LaTeX (let VimTeX handle it)
       opts.highlight.disable = function(lang, buf)
-        if type(opts.ensure_installed) == "table" then
-          vim.list_extend(opts.ensure_installed, { "bibtex" })
-        end
-        if type(opts.highlight.disable) == "table" then
-          vim.list_extend(opts.highlight.disable, { "latex" })
-        else
-          opts.highlight.disable = { "latex" }
-        end
-
-
         -- Disable treesitter for large LaTeX files
         if lang == "latex" then
           local max_filesize = 100 * 1024 -- 100 KB
@@ -83,6 +59,8 @@ return {
           if ok and stats and stats.size > max_filesize then
             return true
           end
+          -- Always disable treesitter highlighting for LaTeX (VimTeX handles it better)
+          return true
         end
         return false
       end

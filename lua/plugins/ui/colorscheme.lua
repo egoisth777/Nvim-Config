@@ -54,9 +54,15 @@ return
                 transparent = true,
                 italic_comments = true,
                 borderless_pickers = true,
-                terminal_colors = true,
-                cache = false,
-
+                terminal_colors = false,
+                cache = true,
+                -- Added support for some other plugins
+                extensions = {
+                    fzflua = true,
+                    mini = true,
+                    blinkcmp = true,
+                    whichkey = true,
+                },
                 -- Add theme customizations for specific syntax elements
                 highlights = {
                     
@@ -121,8 +127,10 @@ return
                     IlluminatedWordText  = { bg = "#507789" },
                     IlluminatedWordRead  = { bg = "#507789" },
                     IlluminatedWordWrite = { bg = "#507789" },
-
-                }
+                    
+                    
+                   
+                },
             })
         end,
     },

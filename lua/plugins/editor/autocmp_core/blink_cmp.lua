@@ -23,6 +23,9 @@ return {
       -- The recommended mapping for Tab and Shift-Tab.
       ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+      
+      -- Set Enter to accept completion when menu is visible, otherwise insert newline
+      ['<CR>'] = { 'accept', 'fallback' },
     },
   }
 }

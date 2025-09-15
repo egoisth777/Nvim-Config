@@ -1,13 +1,14 @@
+-- START 
 -- Currently Contains All Colorscheme set up for nvim
 --[[
     1. catppuccin
     2. abyss
-    3. cyberdream
     4. kanagawa
+    3. cyberdream
     5. nightfox
 --]]
 
--- END- - - - - - - - - - - - - - - - - - - - - -  
+-- END- - - - - - - - - - - - - - - - - - - - - - 
 
 return
 {
@@ -53,16 +54,10 @@ return
                 variant = "auto",
                 transparent = true,
                 italic_comments = true,
+                borderless_telescope = true,  -- This affects fzf-lua too
                 borderless_pickers = true,
                 terminal_colors = false,
-                cache = true,
-                -- Added support for some other plugins
-                extensions = {
-                    fzflua = true,
-                    mini = true,
-                    blinkcmp = true,
-                    whichkey = true,
-                },
+                cache = false,
                 -- Add theme customizations for specific syntax elements
                 highlights = {
                     
@@ -127,9 +122,6 @@ return
                     IlluminatedWordText  = { bg = "#507789" },
                     IlluminatedWordRead  = { bg = "#507789" },
                     IlluminatedWordWrite = { bg = "#507789" },
-                    
-                    
-                   
                 },
             })
         end,

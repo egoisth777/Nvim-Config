@@ -7,3 +7,6 @@
 
 -- Auto-Saving for NVIM
 require("config.autocmds.autosaving")
+
+-- Fix fzf-lua colors for CyberDream
+require("config.autocmds.fzf-lua-colors")

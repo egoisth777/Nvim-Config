@@ -1,7 +1,8 @@
 # We'll use defaults from the LLVM style, but with 4 columns indentation.
-BasedOnStyle: GNU
+BasedOnStyle: Microsoft 
 IndentWidth: 4
-PointerAlignment: Left
 BreakConstructorInitializers: BeforeColon
 AllowShortFunctionsOnASingleLine: None
+# Pointer Alignment
+PointerAlignment: Right
 ColumnLimit: 0

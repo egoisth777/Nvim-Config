@@ -9,6 +9,6 @@
 return
 {
     "NStefan002/screenkey.nvim",
-    lazy = false,
+    lazy = true,
     version = "*", -- or branch = "main", to use the latest commit
 }

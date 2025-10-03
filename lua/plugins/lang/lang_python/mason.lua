@@ -1,6 +1,6 @@
 -- The External Dependency Manager (Package Manager for nvim)
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
       ensure_installed = {
         "pyrefly",
